@@ -33,12 +33,19 @@ $\mathcal{A}$ is a $\sigma$-algebra of $X$. $\{\emptyset, X\} \subset \mathcal{A
 Part 1:
 
 \begin{itemize}
-  \item Take $A \in \mathcal{A}$. Then $A^c \in \mathcal{A}$. So $A \cup A^c = X \in \mathcal{A}$.
-  \item $X \in \mathcal{A}$ implies $X^c = \emptyset \in \mathcal{A}$.
+  \item By definition, $\emptyset \in \mathcal{A}$.
+  \item $\emptyset \in \mathcal{A}$ implies $\emptyset^c = X \in \mathcal{A}$.
   \item So $\{\emptyset, X\}$ is the smallest $\sigma$-algebra of X.
 \end{itemize}
 
 Part 2:
+
+\begin{itemize}
+  \item Suppose $\mathcal{P} (X)$ is not the largest $\sigma$-algebra on $X$.
+  \item Then there is $B \in X$ such that $\mathcal{P} (X) \cup B$ is a $\sigma$-algebra of $X$, where $B \not \in \mathcal{P} (X)$.
+  \item But $B \in X$, so $B \in \mathcal{P} (X)$. This is a contradiction, so
+  $\mathcal{P} (X)$ must be the largest $\sigma$-algebra.
+\end{itemize}
 
 \textbf{Exercise 1.10}
 
@@ -53,10 +60,25 @@ $\{S_\alpha\}$ is a family of $\sigma$-algebras on $X$.
 
 Therefore, $\cap_\alpha \mathcal{S}_\alpha$ is a $\sigma$-algebra.
 
+\textbf{Exercise 1.17}
+
+\begin{itemize}
+  \item $A, B \in \mathcal{S}$, $A \subset B$. $A \cup (B \cap A^c) = B$. As $A$ and $B \cap A^c$ are disjoint, $\mu(A) + \mu(B \cap A^c) = \mu(B)$. This implies $\mu(A) \leq \mu(B)$.
+\end{itemize}
+
 \textbf{Exercise 1.18}
 
 \begin{itemize}
   \item $\lambda(\emptyset) = \mu(\emptyset \cap B) = \mu(\emptyset) = 0$.
+\end{itemize}
+
+\textbf{Exercise 1.20}
+
+\begin{itemize}
+  \item $\cap_{i=1}^n A_i = A_n$
+  \item $\mu (\cap_{i=1}^\infty A_i) = 
+         \lim_{n \to \infty} \mu (\cap_{i=1}^n A_i)
+        = \lim_{n \to \infty} \mu(A_n)$
 \end{itemize}
 
 \end{document}

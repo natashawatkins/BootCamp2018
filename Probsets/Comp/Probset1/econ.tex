@@ -1,0 +1,50 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+
+\textbf{\large Problem Set 1}
+
+Natasha Watkins
+
+\vspace{5mm}
+
+\textbf{Problem 1}
+
+\begin{enumerate}
+  \item The state variables are $B_t$ (barrels of oil left at time $t$) and $p_t$
+  \item The control variable is $q_t$, quantity of oil sold at time $t$
+  \item The transition equation is given as $B_{t+1} = B_t - q_t$
+  \item The sequence equation is given as $V(B_t) = \max_{q_1, q_2,       \cdots} \sum_{t=0}^\infty \Big( \frac{1}{1+r} \Big)^t p_t q_t$ \\ The Bellman equation is given as $V(B_t) = \max_{q_t} p_t q_t + \Big( \frac{1}{1+r} \Big) V(B_{t+1}) $
+  \item We can also write the Bellman equation as 
+        $$
+        V(B_t) = \max_{B_{t+1}} p_t (B_t - B_{t-1}) + \Big( \frac{1}{1+r} \Big) V(B_{t+1})
+        $$
+        Taking the derivative with respect to $B_{t+1}$, we find
+        $$
+        p_t = \Big( \frac{1}{1+r} \Big)V'(B_{t+1})
+        $$
+        $$
+        V'(B_t) = p_t + \Big[-p_t + \Big( \frac{1}{1+r} \Big) V'(B_{t+1}) \Big] \tfrac{dB_{t+1}}{dB_t} = p_t
+        $$
+        So the Euler equation is
+        $$
+        p_t = \Big( \frac{1}{1+r} \Big)p_{t+1}
+        $$
+  \item If $p_{t+1} = p_t$ for all $t$, given $r > 0$, it is optimal   to sell all of the oil in the first period. 
+        
+        If $p_{t+1} > (1 + r)p_t$ for all $t$, then it is optimal to sell oil in the last period - in the infinite case, the owner will never sell oil.
+        
+        Given this, an interior solution must satisfy $p_t \leq p_{t+1} <
+        (1+r) p_t$
+        
+        
+\end{enumerate}
+
+
+\end{document}
