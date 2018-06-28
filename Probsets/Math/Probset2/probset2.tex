@@ -1,0 +1,188 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{gensymb}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{setspace}
+\onehalfspacing
+
+\setlength{\parindent}{0pt}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand*\conj[1]{\bar{#1}}
+
+
+\begin{document}
+
+\textbf{\large Problem Set 2}
+
+Natasha Watkins
+
+\vspace{5mm}
+
+\textbf{Exercise 3.1}
+
+\underline{Part i)}
+
+We can write
+\begin{equation}
+  \label{eq1}
+\| \vect{x} + \vect{y} \|^2 = \| \vect{x} \|^2 + \langle \vect{x}, \vect{y} \rangle +
+\langle \vect{y}, \vect{x} \rangle + \| \vect{y} \|^2
+= \| \vect{x} \|^2 + 2 \langle \vect{x}, \vect{y} \rangle + \| \vect{y} \|^2 
+\end{equation}
+
+\begin{math}
+\text{as } \langle \vect{y}, \vect{x} \rangle 
+= \overline{\langle \vect{x}, \vect{y} \rangle}
+= \langle \vect{x}, \vect{y} \rangle \ \text{ in } \mathbb R^n.
+\end{math}
+
+Using $\langle \vect{x}, \vect{-y} \rangle = (-1)\langle \vect{x}, \vect{y} \rangle$, we can write
+
+\begin{equation}
+  \label{eq2}
+\| \vect{x} - \vect{y} \|^2 = \| \vect{x} \|^2 - \langle \vect{x}, \vect{y} \rangle -
+\langle \vect{y}, \vect{x} \rangle + \| \vect{y} \|^2
+= \| \vect{x} \|^2 - 2 \langle \vect{x}, \vect{y} \rangle + \| \vect{y} \|^2 
+\end{equation}
+
+Combining,
+\begin{equation*}
+  \frac{1}{4} (\| \vect{x} + \vect{y} \|^2 - \| \vect{x} - \vect{y} \|^2)
+  = \frac{1}{4}(4 \langle \vect{x}, \vect{y} \rangle) = \langle \vect{x}, \vect{y} \rangle
+\end{equation*}
+
+\underline{Part ii)}
+
+Combining equations \ref{eq1} and \ref{eq2}, we find
+
+\begin{equation*}
+  \frac{1}{2} (\| \vect{x} + \vect{y} \|^2 + \| \vect{x} - \vect{y} \|^2)
+  = \frac{1}{2}(2 \langle \vect{x}, \vect{y} \rangle) = \langle \vect{x}, \vect{y} \rangle
+\end{equation*}
+
+\textbf{Exercise 3.3}
+
+\underline{Part i)}
+
+\begin{math}
+  \langle \vect{x}, \vect{x}^5 \rangle = \int_0^1 x^6 dx = \frac{x^7}{7} \Big|_0^1 = \frac{1}{7} \\
+  \langle \vect{x}, \vect{x} \rangle = \int_0^1 x^2 dx = \frac{x^3}{3} \Big|_0^1 = \frac{1}{3} 
+  \implies \|\vect{x}\| = \sqrt{\frac{1}{3}} \\
+  \langle \vect{x}^5, \vect{x}^5 \rangle = \int_0^1 x^{10} dx = \frac{x^{11}}{11} \Big|_0^{1} = \frac{1}{11} \implies \|\vect{x}^5\| = \sqrt{\frac{1}{11}} \\
+  
+  \cos(\theta) = \frac{\sqrt{3} \sqrt{11}}{7} = \frac{\sqrt{33}}{7}
+  \implies \theta \approx 35 \degree
+  
+\end{math}
+  
+\underline{Part ii)}
+
+\begin{math}
+  \langle \vect{x}^2, \vect{x}^4 \rangle = \int_0^1 x^6 dx = \frac{x^7}{7} \Big|_0^1 = \frac{1}{7} \\
+  \langle \vect{x}^2, \vect{x}^2 \rangle = \int_0^1 x^4 dx = \frac{x^5}{5} \Big|_0^1 = \frac{1}{5} 
+  \implies \|\vect{x}^2\| = \sqrt{\frac{1}{5}} \\
+  \langle \vect{x}^4, \vect{x}^4 \rangle = \int_0^1 x^{8} dx = \frac{x^{9}}{9} \Big|_0^{1} = \frac{1}{9} \implies \|\vect{x}^4\| = \sqrt{\frac{1}{9}} \\
+  
+  \cos(\theta) = \frac{\sqrt{9} \sqrt{5}}{7} = \frac{\sqrt{45}}{7}
+  \implies \theta \approx 17 \degree
+  
+\end{math}
+
+\textbf{Exercise 3.8}
+
+i)
+
+\begin{math}
+\frac{1}{\pi} \int_{-\pi}^{\pi} \cos(t) \sin(t) dt &= 0    \\
+\frac{1}{\pi} \int_{-\pi}^{\pi} \cos(t) \cos(2t) dt &= 0   \\
+\frac{1}{\pi} \int_{-\pi}^{\pi} \cos(t) \sin(2t) dt &= 0   \\
+\frac{1}{\pi} \int_{-\pi}^{\pi} \cos(2t) \sin(t) dt &= 0   \\
+\frac{1}{\pi} \int_{-\pi}^{\pi} \cos(t) \cos(t) dt &= 1    \\
+\frac{1}{\pi} \int_{-\pi}^{\pi} \sin(t) \sin(t) dt &= 1    \\
+\frac{1}{\pi} \int_{-\pi}^{\pi} \sin(2t) \sin(2t) dt &= 1  \\
+\end{math}
+Therefore, $S$ is an orthonormal set.
+
+        
+ii)
+\begin{math}  
+\|t\| = \sqrt{\langle t, t \rangle} = \int_{-\pi}^{\pi} t^2 dt
+= \frac{t^3}{3} \Big|^\pi_{-\pi} = \frac{2}{3}\pi^2
+\end{math}
+
+iii)
+\begin{math}
+  \text{proj}_X(\cos(3t)) = \sum_{i=1}^m \langle \vect{x}_i, \cos(3t) \rangle 
+  \vect{x_i} = 0
+\end{math}
+
+iv)
+\begin{math}
+  \text{proj}_X(t) = \sum_{i=1}^m \langle \vect{x}_i, t \rangle 
+  \vect{x_i} = 1
+\end{math}
+
+\textbf{Exercise 3.9}
+
+By Theorem 3.2.15, a matrix $Q$ is orthonormal if and only if $Q^HQ = QQ^H = 1$.
+
+The rotation matrix is given by
+\begin{align*}
+  R_\theta = 
+  \begin{bmatrix}
+    \cos \theta & -\sin \theta \\
+    \sin \theta & \cos \theta \\
+  \end{bmatrix}
+\end{align*}
+
+Calculating $R_{\theta}R$, we find
+\begin{align*}
+  R_{\theta}R = 
+  \begin{bmatrix}
+    \cos \theta & -\sin \theta \\
+    \sin \theta & \cos \theta \\
+  \end{bmatrix}
+  &=
+  \begin{bmatrix}
+    \cos \theta & \sin \theta \\
+    -\sin \theta & \cos \theta \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    \cos \theta & -\sin \theta \\
+    \sin \theta & \cos \theta \\
+  \end{bmatrix}
+  \\ &=
+  \begin{bmatrix}
+    \cos^2 \theta + \sin^2 \theta & \cos \theta \sin \theta - \sin \theta \cos \theta \\
+    \sin \theta \cos \theta - \cos \theta \sin \theta & \sin^2 \theta + \cos^2 \theta \\
+  \end{bmatrix}
+  \\ &=
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & 1 \\
+  \end{bmatrix}
+  = \ $I$
+\end{align*}
+ 
+So $R_\theta$ is an orthonormal transformation.
+
+\textbf{Exercise 3.10}
+
+\underline{Part i)}
+
+Assume $Q$ is orthonormal, which implies $\langle \vect{e}_i, \vect{e}_j \rangle = \langle Q \vect{e}_i,  Q \vect{e}_j \rangle$.
+\begin{align*}
+  \vect{e}_i^H \vect{e}_j &= 
+  \langle \vect{e}_i, \vect{e}_j \rangle \\
+  &= \langle Q \vect{e}_i,  Q \vect{e}_j \rangle \\
+  &= (Q \vect{e}_i)^H  (Q \vect{e}_j) \\
+  &= \vect{e}_i^H Q^H  Q \vect{e}_j
+\end{align*}
+
+$\vect{e}_i^H \vect{e}_j = \vect{e}_i^H Q^H  Q \vect{e}_j$ only if $Q^HQ = I$.
+
+\end{document}
