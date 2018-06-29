@@ -64,6 +64,23 @@ Combining equations \ref{eq1} and \ref{eq2}, we find
   = \frac{1}{2}(2 \langle \vect{x}, \vect{y} \rangle) = \langle \vect{x}, \vect{y} \rangle
 \end{equation*}
 
+\textbf{Exercise 3.2}
+
+\begin{align*}
+  \langle \vect{x}, \vect{y} \rangle &= \frac{1}{4}(\|\vect{x} + \vect{y}\|^2 - \|\vect{x} - \vect{y}\|^2 + i\|\vect{x} - i\vect{y}\|^2 - i\|\vect{x} + i\vect{y}\|^2) \\
+  &= \frac{1}{4}(\|\vect{x} + \vect{y}\|^2 - \|\vect{x} - \vect{y}\|^2) + \frac{1}{4} (i\|\vect{x} - i\vect{y}\|^2 - i\|\vect{x} + i\vect{y}\|^2) \\
+  &= \langle \vect{x}, \vect{y} \rangle + \frac{1}{4} (i\|\vect{x} - i\vect{y}\|^2 - i\|\vect{x} + i\vect{y}\|^2) \\
+  &= \langle \vect{x}, \vect{y} \rangle + \frac{1}{4} (i\langle \vect{x} - i\vect{y}, \vect{x} - i\vect{y} \rangle - i\langle \vect{x} + i\vect{y}, \vect{x} + i\vect{y} \rangle) \\
+  &= \langle \vect{x}, \vect{y} \rangle + \frac{1}{4}
+  (i \langle \vect{x}, \vect{x} - i\vect{y} \rangle +  i^2 \langle \vect{y}, \vect{x} - i\vect{y} \rangle - i \langle \vect{x}, \vect{x} + i\vect{y} \rangle + (-i)^2 \langle \vect{y}, \vect{x} + i\vect{y} \rangle) \\
+\begin{split}
+    &= \langle \vect{x}, \vect{y} \rangle + \frac{1}{4}
+    (i \langle \vect{x}, \vect{x} \rangle + i^2 \langle \vect{x}, \vect{y} \rangle + i^2 \langle \vect{y}, \vect{x} \rangle + i^3 \langle \vect{y}, \vect{y} \rangle \\
+    &\qquad - i \langle \vect{x}, \vect{x} \rangle + (-i)^2 \langle \vect{x}, \vect{y} \rangle + (-i)^2 \langle \vect{y}, \vect{x} \rangle + (-i^3) \langle \vect{y}, \vect{y} \rangle)\ \\
+\end{split}\\
+  &= \langle \vect{x}, \vect{y} \rangle
+\end{align*}
+
 \textbf{Exercise 3.3}
 
 \underline{Part i)}
@@ -184,5 +201,155 @@ Assume $Q$ is orthonormal, which implies $\langle \vect{e}_i, \vect{e}_j \rangle
 \end{align*}
 
 $\vect{e}_i^H \vect{e}_j = \vect{e}_i^H Q^H  Q \vect{e}_j$ only if $Q^HQ = I$.
+
+\underline{Part ii)}
+
+\begin{align*}
+  \| Q \vect{x} \| &= \sqrt{\langle Q \vect{x}, Q \vect{x} \rangle} \\
+  &= \sqrt{\vect{x}^H Q^H Q \vect{x}} \\
+  &= \sqrt{\vect{x}^H \vect{x}} \quad \quad \quad \text{as } Q^HQ = 1 \\
+  &= \sqrt{\langle \vect{x}, \vect{x} \rangle} \\
+  &= \| \vect{x} \|
+\end{align*}
+
+\underline{Part iii)}
+
+$Q^HQ = I$ so $Q^H = Q^{-1}$.
+\begin{align*}
+  \langle Q^{-1} \vect{x}, Q^{-1} \vect{x} \rangle
+  &= \vect{x}^H (Q^{-1})^H Q^{-1} \vect{x} \\
+  &= \vect{x}^H (Q^H)^H Q^H \vect{x} \quad \quad \text{as } Q^H = Q^{-1} \\
+  &= \vect{x}^H Q Q^H \vect{x} \\
+  &= \vect{x}^H \vect{x} \quad \quad \text{as } QQ^H = 1 \\
+  &= \langle \vect{x}, \vect{x} \rangle
+\end{align*}
+
+So $Q^{-1}$ is orthonormal.
+
+\underline{Part iv)}
+
+$Q_{n, m}$ is an orthonormal matrix. We can write $Q$ as
+
+\begin{align*}
+  Q =
+\begin{bmatrix}
+  \vect{q}_1 & \vect{q}_2 & \cdots & \vect{q}_m
+\end{bmatrix}
+\end{align*}
+
+Where $\vect{q}_i$ is a $(n \times 1)$ column of $Q$, and $\{\vect{q}_i\}_{i=1}^m$ is a set of columns vectors.
+
+As $Q$ is orthonormal, we know $Q^HQ = I_m$. So we can write
+
+\begin{align*}
+Q^HQ &=
+\begin{bmatrix}
+  \vect{q}_1 & \vect{q}_2 & \cdots & \vect{q}_m
+\end{bmatrix}^H
+\begin{bmatrix}
+  \vect{q}_1 & \vect{q}_2 & \cdots & \vect{q}_m
+\end{bmatrix} \\ &=
+\begin{bmatrix}
+  \vect{q}_1^H \\ \vect{q}_2^H \\ \vdots \\ \vect{q}_m^H
+\end{bmatrix}
+\begin{bmatrix}
+  \vect{q}_1 & \vect{q}_2 & \cdots & \vect{q}_m
+\end{bmatrix} \\ &=
+\begin{bmatrix}
+  \vect{q}_1^H \vect{q}_1 & \vect{q}_2^H \vect{q}_1 & \cdots & \vect{q}_m^H \vect{q}_1 \\
+  \vect{q}_1^H \vect{q}_2 & \vect{q}_2^H \vect{q}_2 & \cdots & \vdots \\
+  \vdots & \vdots & \ddots & \\
+  \vect{q}_1^H \vect{q}_2 & \cdots & & \vect{q}_m^H \vect{q}_m
+\end{bmatrix} \\ &=
+\begin{bmatrix}
+  1 & 0 & \cdots & 0 \\
+  0 & 1 & \cdots & \vdots \\
+  \vdots & \vdots & \ddots & \\
+  0 & \cdots & & 1
+\end{bmatrix}
+\end{align*}
+which satisfies the definition of an orthonormal set, ie. $\langle \vect{q}_i, \vect{q}_j \rangle = \delta_{i, j}$ where
+\begin{align*}
+  \delta_{i, j} =
+  \left\{
+  \begin{array}{ll}
+        1 & \text{if } i = j \\
+        0 & \text{if } i \neq j
+  \end{array} 
+  \right
+\end{align*}
+
+\underline{Part v)}
+
+It is not true that $|\det(Q)| = 1$ implies Q is orthonormal. For example
+\begin{align*}
+  Q = 
+  \begin{bmatrix}
+    2 & \sqrt{3} \\
+    \sqrt{3} & 2 \\
+  \end{bmatrix}
+\end{align*}
+has $|\det(Q)| = 1$ but
+\begin{align*}
+  Q^HQ = 
+  \begin{bmatrix}
+    2 & \sqrt{3} \\
+    \sqrt{3} & 2 \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    2 & \sqrt{3} \\
+    \sqrt{3} & 2 \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    1 & 2\sqrt{3} - 3\sqrt{2} \\
+    3\sqrt{2} -  2\sqrt{3} & -1 \\
+  \end{bmatrix}
+  \neq I
+\end{align*}
+So $Q$ is not orthonormal.
+
+\underline{Part vi)}
+
+$Q_1$ and $Q_2$ are orthonormal, so $Q_1^HQ_1 = I$ and $Q_2^HQ_2 = I$
+Given $Q = Q_1 Q_2$
+\begin{align*}
+  Q^HQ &= (Q_1Q_2)^HQ_1Q_2 \\
+  &= Q_2^H Q_1^H Q_1 Q_2 \\
+  &= Q_2^H Q_2 \\
+  &= I
+\end{align*}
+$Q$ is therefore orthonormal.
+
+\textbf{Exercise 3.23}
+
+By the triangle inequality,
+\begin{equation*}
+  \|\vect{x}\| = \|(\vect{x} - \vect{y}) + \vect{y}\| \leq \|\vect{x} - \vect{y}\| + \|\vect{y}\|
+  \Leftrightarrow \|\vect{x}\| - \|\vect{y}\| \leq \|\vect{x} - \vect{y}\|
+\end{equation*}
+
+By scale preservation,
+\begin{equation*}
+  \|\vect{y}\| = \|-1\| \cdot \|\vect{y}\| = \|-\vect{y}\| = \|\vect{x} - \vect{y} + \vect{x}\| \leq \|\vect{x} - \vect{y}\| + \|\vect{y}\|
+  \Leftrightarrow \|\vect{y}\| - \|\vect{x}\| \leq \|\vect{x} - \vect{y}\|
+\end{equation*}
+
+
+
+\textbf{Exercise 3.47}
+
+$P = A(A^HA)^{-1}A^H$.
+
+\begin{enumerate}[i.]
+  \item $P^2 = A(A^HA)^{-1}A^H A(A^HA)^{-1}A^H$
+  \item $P^H = (A(A^HA)^{-1}A^H)^H = A ((A^HA)^{-1})^H A^H
+        = A (A^HA)^H)^{-1} A^H = A (A^HA)^{-1} A^H = P$
+  \item $P$ is an idempotent matrix by i), which means $rank(P) =     tr(P)$.
+        $$
+        tr(P) = tr(A(A^HA)^{-1}A^H) = tr(A^HA(A^HA)^{-1}) = tr(I_n) = n = rank(P)
+        $$
+        
+\end{enumerate}
 
 \end{document}
