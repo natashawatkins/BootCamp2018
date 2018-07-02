@@ -1,4 +1,5 @@
 \documentclass[letterpaper,12pt]{article}
+\usepackage{textcomp}
 \usepackage{parskip}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -85,35 +86,31 @@ Combining equations \ref{eq1} and \ref{eq2}, we find
 
 \underline{Part i)}
 
-\begin{math}
+\begin{align*}
   \langle \vect{x}, \vect{x}^5 \rangle = \int_0^1 x^6 dx = \frac{x^7}{7} \Big|_0^1 = \frac{1}{7} \\
   \langle \vect{x}, \vect{x} \rangle = \int_0^1 x^2 dx = \frac{x^3}{3} \Big|_0^1 = \frac{1}{3} 
   \implies \|\vect{x}\| = \sqrt{\frac{1}{3}} \\
   \langle \vect{x}^5, \vect{x}^5 \rangle = \int_0^1 x^{10} dx = \frac{x^{11}}{11} \Big|_0^{1} = \frac{1}{11} \implies \|\vect{x}^5\| = \sqrt{\frac{1}{11}} \\
-  
   \cos(\theta) = \frac{\sqrt{3} \sqrt{11}}{7} = \frac{\sqrt{33}}{7}
   \implies \theta \approx 35 \degree
-  
-\end{math}
+\end{align*}
   
 \underline{Part ii)}
 
-\begin{math}
+\begin{align*}
   \langle \vect{x}^2, \vect{x}^4 \rangle = \int_0^1 x^6 dx = \frac{x^7}{7} \Big|_0^1 = \frac{1}{7} \\
   \langle \vect{x}^2, \vect{x}^2 \rangle = \int_0^1 x^4 dx = \frac{x^5}{5} \Big|_0^1 = \frac{1}{5} 
   \implies \|\vect{x}^2\| = \sqrt{\frac{1}{5}} \\
-  \langle \vect{x}^4, \vect{x}^4 \rangle = \int_0^1 x^{8} dx = \frac{x^{9}}{9} \Big|_0^{1} = \frac{1}{9} \implies \|\vect{x}^4\| = \sqrt{\frac{1}{9}} \\
-  
+  \langle \vect{x}^4, \vect{x}^4 \rangle = \int_0^1 x^{8} dx = \frac{x^{9}}{9} \Big|_0^{1} = \frac{1}{9} \implies \|\vect{x}^4\| = \sqrt{\frac{1}{9}} \\  
   \cos(\theta) = \frac{\sqrt{9} \sqrt{5}}{7} = \frac{\sqrt{45}}{7}
   \implies \theta \approx 17 \degree
-  
-\end{math}
+\end{align*}
 
 \textbf{Exercise 3.8}
 
 i)
 
-\begin{math}
+\begin{align*}
 \frac{1}{\pi} \int_{-\pi}^{\pi} \cos(t) \sin(t) dt &= 0    \\
 \frac{1}{\pi} \int_{-\pi}^{\pi} \cos(t) \cos(2t) dt &= 0   \\
 \frac{1}{\pi} \int_{-\pi}^{\pi} \cos(t) \sin(2t) dt &= 0   \\
@@ -121,7 +118,7 @@ i)
 \frac{1}{\pi} \int_{-\pi}^{\pi} \cos(t) \cos(t) dt &= 1    \\
 \frac{1}{\pi} \int_{-\pi}^{\pi} \sin(t) \sin(t) dt &= 1    \\
 \frac{1}{\pi} \int_{-\pi}^{\pi} \sin(2t) \sin(2t) dt &= 1  \\
-\end{math}
+\end{align*}
 Therefore, $S$ is an orthonormal set.
 
         
@@ -182,7 +179,7 @@ Calculating $R_{\theta}R$, we find
     1 & 0 \\
     0 & 1 \\
   \end{bmatrix}
-  = \ $I$
+  = I
 \end{align*}
  
 So $R_\theta$ is an orthonormal transformation.
@@ -270,13 +267,11 @@ Q^HQ &=
 \end{align*}
 which satisfies the definition of an orthonormal set, ie. $\langle \vect{q}_i, \vect{q}_j \rangle = \delta_{i, j}$ where
 \begin{align*}
-  \delta_{i, j} =
-  \left\{
-  \begin{array}{ll}
-        1 & \text{if } i = j \\
-        0 & \text{if } i \neq j
-  \end{array} 
-  \right
+\delta_{i, j}=
+\begin{cases}
+1 & \text{if } i = j \\
+0 & \text{if } i \neq j \\
+\end{cases}
 \end{align*}
 
 \underline{Part v)}
@@ -395,7 +390,19 @@ By scale preservation,
 
 \underline{Part ii)}
 
-Results follow from part i).
+\begin{enumerate}
+	\item \textbf{Positivity: } $|f(t)|^2 \geq 0$ for all $x which implies (\int_a^b |f(t)|^2dt)^\frac{1}{2} \geq 0$. Also, $(\int_a^b |f(t)|^2 dt)^\frac{1}{2} = 0$ if and only if $|f(t)| = 0$.
+	\item \textbf{Scale preservation: }$||af||_{L^2} = (\int_a^b |af(t)|^2 dt)^\frac{1}{2} = (|a|^2 \int_a^b |f(t)|^2 dt)^\frac{1}{2} = |a| ||f||_{L^2}$.
+	\item \textbf{Triangle inequality: } Consider $f, g \in C[a, b]$.
+		\begin{align*}
+		|| f + g || &= \Big(\int_a^b |f(t) + g(t)|^2 dt\Big)^\frac{1}{2} \\
+		&\leq \Big(\int_a^b |f(t)|^2dt + \int_a^b |g(t)|^2dt\Big)^\frac{1}{2} \\
+		&\leq ||f||_{L^2} + ||g||_{L^2} \quad \quad \text{by Cauchy-Schwarz}
+		\end{align*}
+\end{enumerate}
+
+
+
 
 \underline{Part iii)}
 
@@ -496,6 +503,51 @@ Consider $\vect{x}$ such that $\|\vect{x}\| = 1$.
 If $\|R_{\vect{x}}\| < \|\vect{x}\| = 1$, it must be that $\|A\|\|\vect{x}\| < \|A \vect{x} \|$. This can be written as
 \begin{align*}
   \| A \| < \frac{\|A \vect{x}\|}{\|\vect{x}\|}
+\end{align*}
+
+\textbf{Exercise 3.30}
+
+$\|A\|$ is a matrix norm. $\|A\|_s = \|SAS^{-1}\|$.
+\begin{enumerate}
+	\item \textbf{Positivity: } $\|A\| \geq 0 $, so $\|SAS^{-1}\| = \|A\|_s \geq 0$
+	\item \textbf{Scale preservation: }
+		\begin{align*}
+		\|\alpha A\|_S = \|S \alpha AS^{-1}\| = \sup \frac{\| S\alpha A(\vect{x})S^{-1} \|}{\|\vect{x}\|} & \leq \sup \frac{|\alpha| \|SA(\vect{x})S^{-1} \|}{\|\vect{x}\|} \\ &= |\alpha| \sup \frac{\|SA(\vect{x})S^{-1} \|}{\|\vect{x}\|} \\ &= |\alpha| \|S \alpha AS^{-1}\| \\ &= |\alpha| \|A\|_S
+		\end{align*}
+	\item \textbf{Triangle inequality: }
+		\begin{align*}
+		\|A + B \|_S &= \|S (A + B) S^{-1}\| \\
+		&= \|S A S^{-1} + S B S^{-1}\| \\
+		&= \sup \frac{\|S A(\vect{x}) S^{-1} + S B(\vect{x}) S^{-1}\|}{\| \vect{x} \|} \\
+		&\leq \sup \frac{\|S A(\vect{x}) S^{-1}\| + \| S B(\vect{x}) S^{-1}\|}{\| \vect{x} \|} \\
+		&= \|SAS^{-1}\| + \|SBS^{-1}\| \\
+		&= \|A\|_S + \|B\|_S
+		\end{align*}
+\end{enumerate}
+
+So $\|\cdot\|_S$ is also a matrix norm.
+
+\textbf{Exercise 3.40}
+
+\underline{Part i)}
+\begin{align*}
+\langle L(C), B \rangle
+&= \langle AC, B \rangle \\
+&= tr((AC)^HB) \\
+&= tr(C^H A^H B) \\
+&= \langle C, A^H B \rangle \\
+&= \langle C, L(B) \rangle \quad \text{with } A^* = A^H
+\end{align*}
+
+\underline{Part ii)}
+\begin{align*}
+\langle A_2, A_3 A_1 \rangle
+&= tr(A_2^H A_3 A_1) \\
+&= tr((A_2^H A_3 A_1)^H) \\
+&= tr(A_1^HA_3^H A_2) \\
+&= tr(A_1^*A_3^H A_2) \\
+&= tr(A_3^H A_1^* A_2) \\
+&= \langle A_3, A_1^* A_2 \rangle
 \end{align*}
 
 \textbf{Exercise 3.47}
