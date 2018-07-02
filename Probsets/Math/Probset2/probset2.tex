@@ -321,6 +321,31 @@ Given $Q = Q_1 Q_2$
 \end{align*}
 $Q$ is therefore orthonormal.
 
+\textbf{Exercise 3.11}
+
+If the Gram–--Schmidt orthonormalisation process is applied to a collection of linearly dependent vectors, it outputs the $\vect{0}$ vector for some $\vect{x}_k - \vect{p}_{k-1}$, and therefore $\vect{q}_k$ is undefined. 
+
+\textbf{Exercise 3.16}
+
+\underline{Part i)}
+
+Consider a diagonal matrix $D$ with elements on the diagonal equal to $-1$. We can then write $Q^* = QD$ and $R^* = D^{-1}R$, and deduce that $A = Q^* R^* = QDD^{-1}R = QR$, showing that the QR decomposition is not unique.
+
+\underline{Part ii)} 
+
+Suppose $A = Q_1 R_1$ and $A = Q_2 R_2$, , where $R_1, R_2$ are upper triangular matrices with positive elements along the diagonal.
+
+Then $Q_1 R_1 = Q_2 R_2 \implies Q_2^{-1} Q_1 = R_1^{-1}R_2$, which means that $R_1^{-1}R_2$ is orthonormal. As $R_1^{-1}R_2$ is an upper triangular matrix that is orthonormal, its diagonal elements must be equal to 1 (as the diagonal of $R$ is positive). So $Q_2^{-1} Q_1 = I$ and $R_1^{-1}R_2 = I$, and thus $Q_1 = Q_2$ and $R_1 = R_2$, showing that the decomposition is unique in this case.
+
+\textbf{Exercise 3.17}
+\begin{align*}
+  A^H A \vect{x} &= (\hat{Q} \hat{R})^H \hat{Q} \hat{R} \vect{x} \\
+  &= \hat{R}^H \hat{Q}^H \hat{Q} \hat{R} \vect{x} \\
+  &= \hat{R}^H \hat{R} \vect{x} \quad \quad \text{as }  \hat{Q}^H \hat{Q} = 1\\
+  \hat{R}^H \hat{R} \vect{x} &= \hat{R}^H \hat{Q}^H \vect{b} \quad \quad \text{as } A^H = \hat{R}^H \hat{Q}^H \\
+  \hat{R} \vect{x} &= \hat{Q}^H \vect{b} \quad \quad \text{ as required }
+\end{align*}
+
 \textbf{Exercise 3.23}
 
 By the triangle inequality,
@@ -335,7 +360,143 @@ By scale preservation,
   \Leftrightarrow \|\vect{y}\| - \|\vect{x}\| \leq \|\vect{x} - \vect{y}\|
 \end{equation*}
 
+\textbf{Exercise 3.24}
 
+\underline{Part i)}
+
+\begin{enumerate}
+  \item \textbf{Positivity:}
+  
+        Consider $f, g \in C[a, b]$, with $f(t) \geq g(t)$ for all $t \in [a, b]$, then
+        \begin{align*}
+          \int_a^b f(t)dt \geq \int_a^b g(t)dt 
+        \end{align*}
+        With $g(t) = 0$, and $|f(t)| \geq 0$
+        \begin{align*}
+          \int_a^b f(t)dt \geq \int_a^b 0 dt = 0
+        \end{align*}
+  \item \textbf{Scale preservation:}
+  
+        Given $h \in \mathbb F$ and $f \in C[a, b]$,
+        \begin{align*}
+          \| hf \| &= \int_a^b |h f(t)| dt = \int_a^b |h||f(t)| dt =
+          |h| \int_a^b |f(t)| dt = |h| \|f\|
+        \end{align*}
+  \item \textbf{Triangle inequality:}
+        
+        Consider $f, g \in C[a, b]$.
+        \begin{align*}
+          \| f + g \| &= \int_a^b |f(t) + g(t)| dt \\
+          &\leq \int_a^b (|f(t)| + |g(t)|) dt \\
+          &= \int_a^b |f(t)|dt + \int_a^b |g(t)|dt \\
+          &= \|f\| + \|g\| 
+        \end{align*}
+\end{enumerate}
+
+\underline{Part ii)}
+
+Results follow from part i).
+
+\underline{Part iii)}
+
+\begin{enumerate}
+  \item \textbf{Positivity:}
+  
+        $|f(x)| \geq 0$ for all $x$, so it follows that $\sup_{x \in [a, b]} |f(x)| \geq 0$.
+  \item \textbf{Scale preservation:}
+        \begin{align*}
+          \|hf\| = \sup_{x \in [a, b]} |h||f(x)| = |h| \sup_{x \in [a, b]} |f(x)| = |h|\|f\|
+        \end{align*}
+  \item \textbf{Triangle inequality:}
+  
+        For any $x \in [a, b]$
+        \begin{align*}
+          |f(x) + g(x)| &\leq |f(x)| + |g(x)| \\
+                        &\leq \sup_{x \in [a, b]} |f(x)| + \sup_{x \in [a, b]} |g(x)| \\
+                        &= \|f\| + \|g\|
+        \end{align*}
+        As this holds for all $x \in [a, b]$,
+        \begin{align*}
+          \sup_{x \in [a, b]} |f(x) + g(x)| = \|f + g \| \leq \|f\| + \|g\|
+        \end{align*}
+\end{enumerate}
+
+\textbf{Exercise 3.26}
+
+\underline{$\| \vect{x} \|_a \sim \| \vect{x} \|_a$}
+\begin{align*}
+  & m \| \vect{x} \|_a \leq \|\vect{x}\|_a \leq M \| \vect{x} \|_a
+  \\
+  & \implies m \leq 1 \leq M
+\end{align*}
+with $m \in [0, 1]$, and $M \in [1, \infty]$.
+
+\underline{$ \| \vect{x} \|_a \sim \| \vect{x} \|_b \implies \| \vect{x} \|_b \sim \| \vect{x} \|_a$}
+\begin{align*}
+  & m \| \vect{x} \|_a \leq \|\vect{x}\|_b \leq M \| \vect{x} \|_a
+  \\
+  & \implies \frac{1}{m} \leq \frac{\|\vect{x}\|_b}{\| \vect{x} \|_a } \leq \frac{1}{M} \\
+  & \implies \frac{1}{M} \geq \frac{\|\vect{x}\|_a}{\| \vect{x} \|_b } \geq \frac{1}{m} \\
+  & \implies Y \geq \frac{\|\vect{x}\|_a}{\| \vect{x} \|_b } \geq y \\
+  & \implies y \| \vect{x} \|_b  \leq \|\vect{x}\|_a \leq Y \| \vect{x} \|_b 
+\end{align*}
+where $0 \leq y \leq Y$.
+
+\underline{$ \| \vect{x} \|_a \sim \| \vect{x} \|_b \text{ and } \| \vect{x} \|_b \sim \| \vect{x} \|_c  \implies \| \vect{x} \|_a \sim \| \vect{x} \|_c$}
+\begin{align}
+  \label{ineq1}
+  & m \| \vect{x} \|_a \leq \|\vect{x}\|_b \leq M \| \vect{x} \|_a
+\\
+  \label{ineq2}
+  & w \| \vect{x} \|_b \leq \|\vect{x}\|_c \leq W \| \vect{x} \|_b
+\end{align}
+Multiply (\ref{ineq1}) by $w$, to get
+\begin{align}
+  \label{ineq1_w}
+  & mw \| \vect{x} \|_a \leq w\|\vect{x}\|_b \leq wM \| \vect{x} \|_a
+\end{align}
+Combining (\ref{ineq1_w}) with (\ref{ineq2}), we see
+\begin{align*}
+  & mw \| \vect{x} \|_a \leq \|\vect{x}\|_c \leq W \| \vect{x} \|_b
+\end{align*}
+Similarily,
+\begin{align*}
+  & mw \| \vect{x} \|_a \leq \|\vect{x}\|_c \leq MW \| \vect{x} \|_a
+\end{align*}
+where $0 \leq mw \leq MW$, as required.
+
+\underline{Part i)}
+\begin{align*}
+  \| \vect{x} \|_2 
+  &= (|\vect{x}_1|^2 + |\vect{x}_2|^2 + \cdots + |\vect{x}_n|^2)^{1/2} \\
+  & \leq |\vect{x}_1| + |\vect{x}_2| + \cdots + |\vect{x}_n| \quad \quad \text{ by Cauchy-Schwarz} \\
+  &= \| \vect{x} \|_1
+\end{align*}
+
+\textbf{Exercise 3.29}
+
+The induced norm on $M_n(\mathbb F)$ is given by
+$$
+\| A \|_2 = \sup \frac{\|A \vect{x} \|_2}{\| \vect{x} \|_2}
+$$
+Given an orthonormal matrix $Q$,
+\begin{align*}
+  \| Q \|_2 &= \sup \frac{\|Q \vect{x} \|_2}{\| \vect{x} \|_2} \\
+  &= \sup \frac{\|\vect{x} \|_2}{\| \vect{x} \|_2} \\
+  &= 1
+\end{align*}
+Given a matrix norm, we know $\|A \vect{x} \| \leq \|A \| \|\vect{x} \|$. So
+\begin{align*}
+  \|R_{\vect{x}}\| &= \sup \frac{\| A\vect{x} \|}{\|A\|} \\
+  &= \sup \frac{\| A\vect{x} \| \| \vect{x} \| }{\|A\| \| \vect{x} \|} \\
+  &\leq \sup \frac{\| A\vect{x} \| \| \vect{x} \| }{\|A \vect{x} \|} \\
+  &= \| \vect{x} \|
+\end{align*}
+Consider $\vect{x}$ such that $\|\vect{x}\| = 1$.
+If $\|R_{\vect{x}}\| < \|\vect{x}\| = 1$, it must be that $\|A\|\|\vect{x}\| < \|A \vect{x} \|$. This can be written as
+\begin{align*}
+  \| A \| < \frac{\|A \vect{x}\|}{\|\vect{x}\|}
+\end{align*}
 
 \textbf{Exercise 3.47}
 
