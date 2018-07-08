@@ -1,0 +1,138 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{textcomp}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{gensymb}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{setspace}
+\onehalfspacing
+
+\setlength{\parindent}{0pt}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand*\conj[1]{\bar{#1}}
+
+
+\begin{document}
+
+\textbf{\large Problem Set 2}
+
+Natasha Watkins
+
+\vspace{5mm}
+
+\textbf{Exercise 4.4}
+
+By 4.3, the characteristic polynomial of $A^H = A$ is
+$$
+p(\lambda) = \lambda^2 - tr(A) \lambda + \det(A)
+$$
+where A is a $2 \times 2$ matrix of the form
+$$
+A =
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+$$
+The diagonal elements of a Hermitian matrix are real. So the diagonal elements of $A$ are also real. We can check that the roots of the characteristic polynomial are real by finding the discriminant.
+\begin{align*}
+[tr(A)]^2 - 4 \det(A) &= (a + d)^2 - 4 (ad - bc) \\
+&= a^2 + 2ad + d^2 -4ad + 4bc \\
+&= a^2 - 4ad + d^2 + 4bc \\
+&= (a - d)^2 + 4bc
+\end{align*}
+
+\underline{Part i)}
+
+As $A^H$ is Hermitian, $b = \bar{c}$, so $4bc \geq 0$. Therefore the discriminant is positive and the roots are real.
+
+\underline{Part ii)}
+
+If $A^H = -A$, then $b = -\bar{c}$, so $4bc \leq 0$. Therefore, the discriminant is negative and the roots are imaginary.
+
+\textbf{Exercise 4.6}
+
+Consider a matrix $A$ that is upper triangular. We know that the determinant of an upper triangular matrix is the product of its diagonal elements, ie. $\det(A) = \prod_{i=1}^n a_{ii}$.
+
+The eigenvalues of a matrix are such that $\det(\lambda I - A) = 0$.
+
+Therefore, 
+\begin{align*}
+\det(\lambda I - A) &= \prod_{i=1}^n (\lambda_i - a_{ii}) = 0 \\
+&= (\lambda_1 - a_{11}) \cdot (\lambda_2 - a_{22}) \cdots (\lambda_n - a_{nn}) = 0
+\end{align*}
+The roots of the characteristic polynomial (ie. the eigenvalues) are given by the diagonal elements of $A$.
+
+\textbf{Exercise 4.13}
+
+Solving for the spectrum of $A$ gives $\sigma(A) = \{\frac{2}{5}, 1 \}$, with corresponding eigenvectors of $[1, -1]^T$ and $[2, 1]^T$. Let $P$ be the transition matrix, where
+\begin{align*}
+P =
+\begin{bmatrix}
+1 & 1 \\
+-1 & 2 \\
+\end{bmatrix},
+\quad
+D =
+\begin{bmatrix}
+\frac{2}{5} & 0 \\
+0 & 1 \\
+\end{bmatrix},
+\quad
+P^{-1} = \frac{1}{3}
+\begin{bmatrix}
+1 & 1 \\
+-2 & 1 \\
+\end{bmatrix}
+\end{align*}
+Solving $P^{-1}AP$ gives
+\begin{align*}
+\begin{bmatrix}
+	1 & 1 \\
+	-1 & 2 \\
+\end{bmatrix}
+\begin{bmatrix}
+	0.8 & 0.4 \\
+	0,2 & 0.6 \\
+\end{bmatrix}
+\frac{1}{3}
+\begin{bmatrix}
+	1 & 1 \\
+	-2 & 1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{2}{5} & 0 \\
+0 & 1
+\end{bmatrix}
+= D
+\end{align*}
+
+\textbf{Exercise 4.18}
+
+We know that $\lambda$ satisfies $A\vect{x} = \lambda \vect{x}$ for some $\vect{x}$. Taking the transpose, we see $\vect{x}^TA^T = \lambda \vect{x}^T$. This is equivalent to $\det(A^T - \lambda I) = 0$.
+
+The determinant of a matrix $A$ is equal to the determinant of its transpose, so
+\begin{align*}
+\det(A^T - \lambda I) = \det(A - \lambda I) = 0
+\end{align*}
+As we know $\det(A - \lambda I) = 0$ holds for some $\vect{x}$, there exists a vector $\vect{x}^T$ such that $\det(A^T - \lambda I) = 0$ holds.
+
+\textbf{Exercise 4.20}
+
+If $A^H$ and B are orthornormally similar, then there is $U$ such that $B = U^HA^HU$.
+\begin{align*}
+B^H = (U^HA^HU)^H = U^H A U = U^H A^H U = B
+\end{align*}
+Therefore, $B$ is also Hermitian.
+
+\textbf{Exercise 4.27}
+
+$A$ is a positive definite matrix, so it is Hermitian. The diagonal elements of a Hermitian matrix are real, as they are their own complex conjugate.
+
+It also is true that $\langle \vect{x},  A\vect{x} \rangle = \vect{x}^H A \vect{x} > 0$ for any vector $\vect{x}$. Consider the vector $e_1 = [1 \ 0 \ 0 \ \cdots \ 0]^T$. $e_1^H A e_1$ selects the first diagonal element of $A$. Likewise, the vector $e_2$ selects the second diagonal element of $A$. As $A\vect{x} \rangle = \vect{x}^H A \vect{x} > 0$ holds for all vectors, the diagonal elements are all positive.
+
+\end{document}
