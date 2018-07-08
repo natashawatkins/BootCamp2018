@@ -135,4 +135,13 @@ $A$ is a positive definite matrix, so it is Hermitian. The diagonal elements of 
 
 It also is true that $\langle \vect{x},  A\vect{x} \rangle = \vect{x}^H A \vect{x} > 0$ for any vector $\vect{x}$. Consider the vector $e_1 = [1 \ 0 \ 0 \ \cdots \ 0]^T$. $e_1^H A e_1$ selects the first diagonal element of $A$. Likewise, the vector $e_2$ selects the second diagonal element of $A$. As $A\vect{x} \rangle = \vect{x}^H A \vect{x} > 0$ holds for all vectors, the diagonal elements are all positive.
 
+\textbf{Exercise 3.38}
+
+\begin{enumerate}[i)]
+	\item $AA^{\dagger}A = U_1 \Sigma_1 V_1^H V_1 \Sigma_1^{-1} U_1^H U_1 \Sigma_1 V_1^H = U_1  \Sigma_1 V_1^H = A $
+	\item $A^{\dagger} A A^{\dagger} = V_1 \Sigma_1^{-1} U_1^H U_1 \Sigma_1 V_1^H V_1 \Sigma_1^{-1} U_1^H =  V_1 \Sigma_1^{-1} U_1^H = A^{\dagger}$
+	\item $(A A^{\dagger})^H = ((V_1 \Sigma_1 U_1^H) (U_1 \Sigma_1^{-1} V_1^H))^H = V_1 \Sigma_1^{-1} U_1^H U_1 \Sigma_1 V_1^H = A^{\dagger} A$
+	\item $(A^{\dagger} A)^H = (( V_1 \Sigma_1^{-1} U_1^H)(U_1 \Sigma_1 V_1^H))^H = V_1 \Sigma_1 U_1^H U_1 \Sigma_1^{-1} V_1^H = V_1 V_1^H = A^{\dagger} A$
+\end{enumerate}
+
 \end{document}
