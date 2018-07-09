@@ -17,11 +17,25 @@
 
 \begin{document}
 
-\textbf{\large Problem Set 2}
+\textbf{\large Problem Set 3}
 
 Natasha Watkins
 
 \vspace{5mm}
+
+\textbf{Exercise 4.2}
+
+The derivative operator can be written in matrix form as
+\begin{align*}
+D =
+\begin{bmatrix}
+0 & 1 & 0 \\
+0 & 0 & 2 \\
+0 & 0 & 0
+\end{bmatrix}
+\end{align*}
+
+Solving for $\lambda$ such that $\det(D - \lambda I) = 0$ yields $\lambda = 0$. This eigenvalue has an associated eigenvector of $[x_1 \ 0 \ 0]^T$. Therefore, the algebraic multiplicity is 3 ($\lambda$ appears 3 times) and the geometric multiplicity is 1 (there is 1 associated eigenvector).
 
 \textbf{Exercise 4.4}
 
@@ -129,11 +143,48 @@ B^H = (U^HA^HU)^H = U^H A U = U^H A^H U = B
 \end{align*}
 Therefore, $B$ is also Hermitian.
 
+\textbf{Exercise 4.24}
+
+With the standard inner product on $\mathbb F_n$
+\begin{align*}
+\langle \vect{x}, A \vect{x} \rangle = \langle \vect{x}, \lambda \vect{x} \rangle = \lambda \vect{x}^H \vect{x} = \lambda \|\vect{x}\|_2
+\end{align*}
+Therefore, as Hermitian matrices only have real eigenvalues, the Rayleigh quotient only takes real values. As skew-Hermitian matrices only have imaginary eigenvalues, the Rayleigh quotient only takes imaginary values.
+
+\textbf{Exercise 4.25}
+
+\underline{Part i)}
+\begin{align*}
+(\vect{x}_1\vect{x}_1^H + \cdots + \vect{x}_n\vect{x}_n^H) \vect{x}_j &=
+\vect{x}_1\vect{x}_1^H\vect{x}_j + \cdots + \vect{x}_n\vect{x}^H_n\vect{x}_j\\ &=
+\vect{x}_j
+\end{align*}
+As $\vect{x}^H_i \vect{x}_j = 0$, with $i \neq j$, and $\vect{x}^H_i \vect{x}_i = 1$, as the eigenvectors $[\vect{x}_1 \ \vect{x}_2 \cdots \vect{x}_n]$ are orthonormal. Therefore, $(\vect{x}_1\vect{x}_1^H + \cdots + \vect{x}_n\vect{x}_n^H) = I$.
+
+\underline{Part ii)}
+\begin{align*}
+(\lambda_1 \vect{x}_1\vect{x}_1^H + \cdots + \lambda_n \vect{x}_n\vect{x}_n^H) \vect{x}_j &=
+\lambda_1 \vect{x}_1\vect{x}_1^H\vect{x}_j + \cdots + \lambda_n \vect{x}_n\vect{x}^H_n\vect{x}_j\\ &=
+\lambda_j \vect{x}_j \\ &=
+A \vect{x}_j \quad \quad \text{as } A\vect{x}_j = \lambda_j \vect{x}_j
+\end{align*}
+Similar to part i), we can therefore write, $(\lambda_1 \vect{x}_1\vect{x}_1^H + \cdots + \lambda_n \vect{x}_n\vect{x}_n^H) = A$.
+
 \textbf{Exercise 4.27}
 
 $A$ is a positive definite matrix, so it is Hermitian. The diagonal elements of a Hermitian matrix are real, as they are their own complex conjugate.
 
-It also is true that $\langle \vect{x},  A\vect{x} \rangle = \vect{x}^H A \vect{x} > 0$ for any vector $\vect{x}$. Consider the vector $e_1 = [1 \ 0 \ 0 \ \cdots \ 0]^T$. $e_1^H A e_1$ selects the first diagonal element of $A$. Likewise, the vector $e_2$ selects the second diagonal element of $A$. As $A\vect{x} \rangle = \vect{x}^H A \vect{x} > 0$ holds for all vectors, the diagonal elements are all positive.
+It also is true that $\langle \vect{x},  A\vect{x} \rangle = \vect{x}^H A \vect{x} > 0$ for any vector $\vect{x}$. Consider the vector $e_1 = [1 \ 0 \ 0 \ \cdots \ 0]^T$. $e_1^H A e_1$ selects the first diagonal element of $A$. Likewise, the vector $e_2$ selects the second diagonal element of $A$. As $\langle \vect{x}, A\vect{x} \rangle = \vect{x}^H A \vect{x} > 0$ holds for all vectors, the diagonal elements are all positive.
+
+\textbf{Exercise 4.36}
+
+The following matrix has an eigenvalue of -1 and a singular value of one.
+\begin{align*}
+\begin{bmatrix}
+-1 & 0 \\
+0 & -1
+\end{bmatrix}
+\end{align*}
 
 \textbf{Exercise 3.38}
 
