@@ -1,0 +1,184 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{textcomp}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{gensymb}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{setspace}
+\onehalfspacing
+
+\setlength{\parindent}{0pt}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand*\conj[1]{\bar{#1}}
+
+
+\begin{document}
+
+\textbf{\large Problem Set 5}
+
+Natasha Watkins
+
+\vspace{5mm}
+
+\textbf{Exercise 6.6}
+\begin{align*}
+Df(x, y) =
+\begin{bmatrix}
+6xy + 4y^2 + y \\
+3x^2 +8xy + x
+\end{bmatrix}
+\end{align*}
+The critical points, where $Df(x, y) = \vect{0}$, are $(0, 0)$,  $(-\frac{1}{9}, -\frac{1}{12})$, $(0, -\frac{1}{4})$ and $(-\frac{1}{3}, 0)$.
+\begin{align*}
+D^2f(x, y) =
+\begin{bmatrix}
+6y & 6x + 8y + 1 \\
+6x + 8y + 1 & 8x
+\end{bmatrix}
+\end{align*}
+
+Evaluating the second derivative at $(0, 0)$, we see
+\begin{align*}
+D^2f(x, y)\big|_{(0, 0)} =
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+\end{align*}
+$\lambda_1 = -1$ and $\lambda_2 = 1$, so $(0, 0)$ is a saddle point.
+
+Evaluating the second derivative at $(-\frac{1}{9}, -\frac{1}{12})$, we see
+\begin{align*}
+D^2f(x, y)\big|_{(\frac{1}{9}, -\frac{1}{12})} =
+\begin{bmatrix}
+-\frac{1}{2} & -\frac{1}{3} \\
+-\frac{1}{3} & -\frac{8}{9}
+\end{bmatrix}
+\end{align*}
+This is a negative definite matrix, so $(-\frac{1}{9}, -\frac{1}{12})$ is a maximizer.
+
+Evaluating the second derivative at $(0, -\frac{1}{4})$, we see
+\begin{align*}
+D^2f(x, y)\big|_{(0, -\frac{1}{4})} =
+\begin{bmatrix}
+-\frac{6}{4} & -1 \\
+-1 & 0
+\end{bmatrix}
+\end{align*}
+This matrix has mixed sign eigenvalues, so $(0, -\frac{1}{4})$ is a saddle point.
+
+Evaluating the second derivative at $(-\frac{1}{3}, 0)$, we see
+\begin{align*}
+D^2f(x, y)\big|_{(-\frac{1}{3}, 0)} =
+\begin{bmatrix}
+0 & -1 \\
+-1 & -\frac{8}{3}
+\end{bmatrix}
+\end{align*}
+This matrix has mixed sign eigenvalues, so $(-\frac{1}{3}, 0)$ is a saddle point.
+
+\textbf{Exercise 6.11}
+
+Using Newton's method,
+\begin{align*}
+x_1 &= x_0 - \frac{2a x_0 + b}{2a} \\
+&=  \frac{ 2ax_0 - 2a x_0 - b}{2a} \\
+&= -\frac{b}{2a}
+\end{align*}
+Substituting this value into $f'(x)$, we find $f'(-\frac{b}{2a}) = 0$, confirming that this is a critical point of $f$. $f''(-\frac{b}{2a}) > 0$, so $-\frac{b}{2a}$ is a minimizer of $f$. We know this is the unique minimizer of $f$ as $f'(x) = 0$ where $x = -\frac{b}{2a}$.
+
+\textbf{Exercise 7.1}
+
+Take two points, $\vect{x}, \vect{y} \in conv(S)$ such that $\vect{x} = \delta_1 \vect{x}_1 + \cdots \delta_k \vect{x}_k$ and $\vect{y} = \gamma_1 \vect{x}_1 + \cdots \gamma_k \vect{x}_k$, with $\sum_{i=1}^k \delta_i = 1$ and $\sum_{i=1}^k \gamma_i = 1$. We can write their convex combination as $\lambda \vect{x} + (1 + \lambda)\vect{y}$.
+\begin{align*}
+\lambda \vect{x} + (1 + \lambda)\vect{y} &=
+\lambda (\delta_1 \vect{x}_1 + \cdots \delta_k \vect{x}_k) + (1 - \lambda)(\gamma_1 \vect{x}_1 + \cdots \gamma_k \vect{x}_k) \\ &=
+(\lambda \delta_1 + (1 - \lambda) \gamma_1)\vect{x}_1 + \cdots + (\lambda \delta_k + (1 - \lambda) \gamma_k)\vect{x}_k
+\end{align*}
+We know that the convex combination of $\vect{x}$ and $\vect{y}$ are contained in $conv(S)$ because
+\begin{align*}
+\sum_{i=1}^k (\lambda \delta_i + (1 - \lambda) \gamma_i) &=
+\lambda \sum_{i=1}^k \delta_i + (1 - \lambda) \sum_{i=1}^k \gamma_i \\ &=
+\lambda + (1 - \lambda) = 1
+\end{align*}
+which satisfies the definition of a convex set.
+
+\textbf{Exercise 7.2}
+
+\underline{Part i)}
+
+Take two points, $\vect{x}, \vect{y}$, on the hyperplane described by $\langle \vect{a}, \vect{x} \rangle = b$, such that $a_1x_1 + \cdots + a_nx_n = b$ and $a_1y_1 + \cdots + a_ny_n = b$. Taking their convex combination,
+\begin{align*}
+\lambda \vect{x} + (1 - \lambda) \vect{y} &= \lambda (a_1x_1 + \cdots + a_nx_n) + (1 - \lambda) a_1y_1 + \cdots + a_ny_n \\ &= \lambda b + (1 - \lambda) b = b
+\end{align*}
+Therefore, the convex combination also lies on the hyperplane $\implies$ the hyperplane is a convex set.
+
+\underline{Part ii)}
+
+Take two points, $\vect{x}, \vect{y}$, in the half space described by $\langle \vect{a}, \vect{x} \rangle \leq b$, such that $a_1x_1 + \cdots + a_nx_n \leq b$ and $a_1y_1 + \cdots + a_ny_n \leq b$. Taking their convex combination,
+\begin{align*}
+\lambda \vect{x} + (1 - \lambda) \vect{y} &= \lambda (a_1x_1 + \cdots + a_nx_n) + (1 - \lambda) a_1y_1 + \cdots + a_ny_n \\ & \leq \lambda b + (1 - \lambda) b = b
+\end{align*}
+Therefore, the convex combination also lies in the half space $\implies$ the half space is convex.
+
+\textbf{Exercise 7.4}
+
+\underline{Part i)}
+\begin{align*}
+\|\vect{x} - \vect{y}\|^2 &= \langle \vect{x} - \vect{y}, \vect{x} - \vect{y} \rangle \\
+&= \langle \vect{x} - \vect{p} + \vect{p} - \vect{y}, \vect{x} - \vect{p} + \vect{p} - \vect{y} \rangle
+\end{align*}
+Let $\vect{z} = \vect{x} - \vect{p}$ and $\vect{k} = \vect{p} - \vect{y}$.
+\begin{align*}
+\|\vect{x} - \vect{y}\|^2 &= \langle \vect{z} + \vect{k}, \vect{z} + \vect{k} \rangle \\
+&= \langle \vect{z}, \vect{z} \rangle + 2 \langle \vect{z}, \vect{k} \rangle + \langle \vect{k}, \vect{k} \rangle \\
+&= \langle \vect{x} - \vect{p}, \vect{x} - \vect{p} \rangle + \langle \vect{p} - \vect{y}, \vect{p} - \vect{y} \rangle + 2 \langle \vect{x} - \vect{p}, \vect{p} - \vect{y} \rangle \\
+&= \|\vect{x} - \vect{p}\|^2 + \|\vect{p} - \vect{y}\|^2 + 2 \langle \vect{x} - \vect{p}, \vect{p} - \vect{y} \rangle
+\end{align*}
+
+\underline{Part ii)}
+
+If 7.14 holds, we know
+\begin{align*}
+\| \vect{x} - \vect{y} \|^2 - \|\vect{x} - \vect{p} \|^2 - \| \vect{p} - \vect{y} \|^2 \geq 0 \\
+\implies \| \vect{x} - \vect{y} \|^2 - \| \vect{p} - \vect{y} \|^2 \geq \|\vect{x} - \vect{p} \|^2 \\
+\implies \| \vect{x} - \vect{y} \| > \|\vect{x} - \vect{p} \| \quad \quad \text{as } \vect{y} \neq \vect{p}
+\end{align*}
+
+\underline{Part iii)}
+\begin{align*}
+\| \vect{x} - \vect{z} \|^2 &= \langle \vect{x} - \vect{p} + \lambda \vect{p} - \lambda \vect{y}, \vect{x} - \vect{p} + \lambda \vect{p} - \lambda \vect{y} \rangle \\
+&= \| \vect{x} - \vect{p} \|^2 + \lambda^2 \| \vect{p} - \vect{y} \|^2 + 2 \lambda \langle \vect{x} - \vect{p}, \vect{p} - \vect{y} \rangle
+\end{align*}
+
+\textbf{Exercise 7.13}
+
+Suppose $f$ is not constant, ie. $f(\vect{x}) > f(\vect{y})$ for some $\vect{x}, \vect{y} \in \mathbb R^n$. Then,
+\begin{align*}
+f(\lambda \vect{x} + (1 - \lambda) \vect{y}) &\leq \lambda f(\vect{x}) + (1 - \lambda)f(\vect{y}) \\
+f(\vect{z}) &\leq \lambda f(\vect{x}) + (1 - \lambda)f(\vect{y}) \\
+\frac{f(\vect{z}) - (1 - \lambda) f(\vect{y})}{\lambda} &\leq f(\vect{x}) \\
+\end{align*}
+
+\textbf{Exercise 7.20}
+
+$f$ is convex so $f(\lambda \vect{x} + (1 - \lambda) \vect{y}) \leq \lambda f(\vect{x}) + (1 - \lambda) f(\vect{y})$. $-f$ is also convex so 
+\begin{align*}
+-f(\lambda \vect{x} + (1 - \lambda) \vect{y}) &\leq -\lambda f(\vect{x}) - (1 - \lambda) f(\vect{y}) \\ 
+\implies f(\lambda \vect{x} + (1 - \lambda) \vect{y}) &\geq \lambda f(\vect{x}) + (1 - \lambda) f(\vect{y}) \\ 
+\implies f(\lambda \vect{x} + (1 - \lambda) \vect{y}) &= \lambda f(\vect{x}) + (1 - \lambda) f(\vect{y})
+\end{align*}
+Therefore $f$ is an affine function (this is the definition of an affine function with $L(\vect{x}) = f(\vect{x}) - f(\vect{0})$).
+
+\textbf{Exercise 7.21}
+
+$\vect{x}^*$ is a minimizer for the function $f(\vect{x})$. Suppose $\vect{x}^*$ is not the minimizer for $\phi \circ f(\vect{x})$, ie. $\phi \circ f(\vect{x}) \leq \phi \circ f(\vect{x}^*)$ for some $\vect{x}$. As $\phi$ is strictly increasing, this implies $f(\vect{x}) \leq f(\vect{x}^*)$, which contradicts the fact that $\vect{x}^*$ is the minimizer of $f$.
+
+$\vect{x}^*$ is a minimizer for the function $\phi \circ f(\vect{x})$. Suppose $\vect{x}^*$ is not the minimizer for $f(\vect{x})$, ie. $f(\vect{x}) \leq f(\vect{x}^*)$ for some $\vect{x}$.
+Taking $\phi \circ f(\vect{x})$, as $\phi$ is strictly increasing, the previous inequality implies $\phi \circ f(\vect{x}) \leq \phi \circ f(\vect{x}^*)$, which contradict the fact that $\vect{x}^*$ is the minimizer of $\phi \circ f(\vect{x})$.
+
+
+\end{document}
