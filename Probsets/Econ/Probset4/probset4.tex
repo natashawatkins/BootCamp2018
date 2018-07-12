@@ -1,3 +1,4 @@
+% !TeX spellcheck = en_GB
 \documentclass[letterpaper,12pt]{article}
 \usepackage{textcomp}
 \usepackage{parskip}
@@ -81,8 +82,8 @@ $K_{t+1} = \beta \alpha e^{z_t} K_t^\alpha$
 \begin{enumerate}
 	\item $c_t = (1 - \tau)[w_t (r_t - \delta) k_t] + k_t + T_t - k_{t+1}$
 	\item $c_t^{-\gamma} = \beta E_t \{c_{t+1}^{-\gamma} [(r_{t+1} - \delta)(1 - \tau) + 1]\}$
-	\item $r_t = \alpha K_t^\alpha (L_t e^{z_t})^{(1 - \alpha)}$
-	\item $w_t = (1 - \alpha) K_t^\alpha (L_t e^{z_t}) ^{-\alpha}$
+	\item $r_t = \alpha K_t^{\alpha-1} (e^{z_t})^{(1 - \alpha)}$
+	\item $w_t = (1 - \alpha) K_t^\alpha (e^{z_t}) ^{-\alpha}$
 	\item $\tau[w_t + (r_t - \delta) k_t] = T_t$
 	\item $z_t = (1 - \rho_z) \bar{z} + \rho_z z_{t-1} + \epsilon_t^z; \ \epsilon_t^z \sim i.i.d.(0, \sigma_z^2)$
 \end{enumerate}
@@ -91,10 +92,45 @@ Steady-state versions of these equations are given by
 \begin{enumerate}
 	\item $\bar{c} = (1 - \tau)[\bar{w} (\bar{r} - \delta) \bar{k}]  + \bar{T} $
 	\item $\bar{c}^{-\gamma} = \beta E_t \{\bar{c}^{-\gamma} [(\bar{r} - \delta)(1 - \tau) + 1]\}$
-	\item $\bar{r} = \alpha \bar{k}^\alpha (e^{\bar{z}})^{(1 - \alpha)}$
+	\item $\bar{r} = \alpha \bar{k}^{\alpha-1} (e^{\bar{z}})^{(1 - \alpha)}$
 	\item $\bar{w} = (1 - \alpha) \bar{k}^\alpha (e^{\bar{z}}) ^{-\alpha}$
 	\item $\tau[\bar{w} + (\bar{r} - \delta) \bar{k}] = \bar{T}$
 	\item $0 = \epsilon_t^{\bar{z}}; \ \epsilon_t^z \sim i.i.d.(0, \sigma_z^2)$
 \end{enumerate}
+
+The algebraic solution of steady state capital as a function of $\bar{z}$ is
+\begin{align*}
+\bar{k} = 
+\Big[ \frac{1}{(e^{\bar{z}})^{1-\alpha}} \Big( \frac{1-\beta}{\alpha\beta(1-\tau)} + \frac{\delta}{\alpha} \Big) \Big] ^{\frac{1}{\alpha - 1}}
+\end{align*}
+
+\textbf{Exercise 6}
+
+\begin{enumerate}
+	\item $c_t = (1 - \tau)[w_t (r_t - \delta) k_t] + k_t + T_t - k_{t+1}$
+	\item $c_t^{-\gamma} = \beta E_t \{c_{t+1}^{-\gamma} [(r_{t+1} - \delta)(1 - \tau) + 1]\}$
+	\item $a(1-l_t)^{-\xi} = c^{-\gamma} w_t (1 - \tau)$
+	\item $r_t = \alpha K_t^{\alpha-1} (L_t e^{z_t})^{(1 - \alpha)}$
+	\item $w_t = (1 - \alpha) K_t^\alpha (L_t e^{z_t}) ^{-\alpha}$
+	\item $\tau[w_t l_t + (r_t - \delta) k_t] = T_t$
+	\item $z_t = (1 - \rho_z) \bar{z} + \rho_z z_{t-1} + \epsilon_t^z; \ \epsilon_t^z \sim i.i.d.(0, \sigma_z^2)$
+\end{enumerate}
+
+Steady-state versions of these equations are given by
+\begin{enumerate}
+	\item $\bar{c} = (1 - \tau)[\bar{w} (\bar{r} - \delta) \bar{k}]  + \bar{T} $
+	\item $\bar{c}^{-\gamma} = \beta E_t \{\bar{c}^{-\gamma} [(\bar{r} - \delta)(1 - \tau) + 1]\}$
+	\item $a(1-\bar{l})^{-\xi} = c^{-\gamma} \bar{w} (1 - \tau)$
+	\item $\bar{r} = \alpha \bar{k}^{\alpha-1} (\bar{l} e^{\bar{z}})^{(1 - \alpha)}$
+	\item $\bar{w} = (1 - \alpha) \bar{k}^\alpha (\bar{l} e^{\bar{z}}) ^{-\alpha}$
+	\item $\tau[\bar{w} \bar{l} + (\bar{r} - \delta) \bar{k}] = \bar{T}$
+	\item $0 = \epsilon_t^{\bar{z}}; \ \epsilon_t^z \sim i.i.d.(0, \sigma_z^2)$
+\end{enumerate}
+
+The algebraic solution of steady state capital as a function of $\bar{z}$ is
+\begin{align*}
+\bar{k} = 
+\Big[ \frac{1}{(e^{\bar{z}})^{1-\alpha}} \Big( \frac{1-\beta}{\alpha\beta(1-\tau)} + \frac{\delta}{\alpha} \Big) \Big] ^{\frac{1}{\alpha - 1}}
+\end{align*}
 
 \end{document}
