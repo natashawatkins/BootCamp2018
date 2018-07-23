@@ -298,6 +298,44 @@ We can only increase $x_2$. The binding constraint is $w_2$, so we increase $x_2
 
 The optimal value is therefore 2 at (0, 2).
 
+\textbf{Exercise 8.12}
+
+\begin{center}
+	$\begin{array}{ c c c c c c c c c c c c}
+	\zeta & = & & & 10x_1 & - & 57x_2 & - & 9x_3 & - & 24x_4 \\
+	\hline
+	w_1 & = &  & & -x_1 & + & 3x_2 & + & x_3 & - & 2x_4 \\
+	w_2 & = &  & & -x_1 & + & 11x_2 & + & 5x_3 & - & 18x_4 \\
+	w_3 & = & 1 & - & x_1 & & & & & & \\
+	\end{array}$ \\
+\end{center}
+
+We will pivot $x_1$ with $w_1$.
+
+\begin{center}
+	$\begin{array}{ c c c c c c c c c c c c}
+	\zeta & = & & & -10w_1 & - & 27x_2 & + & x_3 & - & 44x_4 \\
+	\hline
+	x_1 & = &  & & -w_1 & + & 3x_2 & + & x_3 & - & 2x_4 \\
+	w_2 & = &  & & w_1 & + & 8x_2 & + & 4x_3 & - & 20x_4 \\
+	w_3 & = & 1 & + & w_1 & - & 3x_2 & - & x_2 & + & 2x_4 \\
+	\end{array}$ \\
+\end{center}
+
+We will pivot $x_3$ with $w_3$.
+
+\begin{center}
+	$\begin{array}{ c c c c c c c c c c c c}
+	\zeta & = & 1 & - & -9w_1 & - & 30x_2 & - & w_3 & & \\
+	\hline
+	x_1 & = & 1 & & & & & - & w_3 & & \\
+	w_2 & = & 4 & + & 5w_1 & - & 4x_2 & - & 4w_3 & - & 12x_4 \\
+	x_3 & = & 1 & + & w_1 & - & 3x_2 & - & w_3 & + & 2x_4 \\
+	\end{array}$ \\
+\end{center}
+
+The optimal value is 1 at the point (1, 0, 1, 0).
+
 \textbf{Exercise 8.15}
 
 We have $A \vect{x} \leq \vect{b}$ and $A^T \vect{y} \geq \vect{c}$.
