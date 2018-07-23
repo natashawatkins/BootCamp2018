@@ -11,12 +11,15 @@
 \usepackage{setspace}
 \usepackage{array}
 \usepackage{threeparttable}
+\usepackage{graphicx}
+\usepackage{float}
 
 \onehalfspacing
 
 \setlength{\parindent}{0pt}
 \newcommand{\vect}[1]{\mathbf{#1}}
 \newcommand*\conj[1]{\bar{#1}}
+\setlength{\belowcaptionskip}{-80pt}
 
 
 \begin{document}
@@ -26,6 +29,32 @@
 Natasha Watkins
 
 \vspace{5mm}
+
+\textbf{Exercise 8.1}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{plot1.png}
+	\label{plot1}
+\end{figure}
+The optimizer is (2.8, 3.2).
+
+\textbf{Exercise 8.2}
+
+\underline{Part i)}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{plot2.png}
+	\label{plot1}
+\end{figure}
+The optimizer is (6, 2).
+
+\underline{Part ii)}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{plot3.png}
+	\label{plot1}
+\end{figure}
+The optimizer is (15, 12).
 
 \textbf{Exercise 8.3}
 
@@ -176,7 +205,7 @@ We can no longer increase the variables in the objective function, so the maximu
 
 \underline{Part i)}
 
-As one of the constraints has a negative constant, the origin is infeasible. We will first need to solvethe auxiliary problem, given as
+As one of the constraints has a negative constant, the origin is infeasible. We will first need to solve the auxiliary problem, given as
 \begin{center}
 	$\begin{array}{ c c c c c c c c c c }
 	\zeta & = &  &   &      &   &      &   & -x_o \\
@@ -211,7 +240,7 @@ We need the objective function of the auxiliary problem to be 0, so we will pivo
 
 \underline{Part ii)}
 
-As one of the constraints has a negative constant, the origin is infeasible. We will first need to solvethe auxiliary problem, given as
+As one of the constraints has a negative constant, the origin is infeasible. We will first need to solve the auxiliary problem, given as
 \begin{center}
 	$\begin{array}{ c c c c c c c c c c }
 	\zeta & = &  &   &      &   &      &   & -x_o \\
