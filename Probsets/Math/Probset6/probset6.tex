@@ -1,0 +1,81 @@
+% !TeX spellcheck = en_GB
+\documentclass[letterpaper,12pt]{article}
+\usepackage{textcomp}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{gensymb}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{graphicx}
+\usepackage{float}
+
+\onehalfspacing
+
+\setlength{\parindent}{0pt}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand*\conj[1]{\bar{#1}}
+\setlength{\belowcaptionskip}{-80pt}
+
+
+\begin{document}
+
+\textbf{\large Problem Set 6}
+
+Natasha Watkins
+
+\vspace{5mm}
+
+\textbf{Exercise 9.1}
+
+An unconstrained linear function can be written as $f(\vect{x}) = \vect{b}^T \vect{x} + c$. In the case where $\vect{b} = \vect{0}$, the function is constant $Df(\vect{x}) = 0 \ \forall \ \vect{x}$, and therefore the minimum is equal to $c$. In the case where $\vect{b} \neq \vect{0}$, $Df(\vect{x}) = \vect{b}^T \ \forall \ \vect{x}$, and therefore there is no minimum.
+
+\textbf{Exercise 9.2}
+\begin{align*}
+\| A \vect{x} - \vect{b} \|_2
+&= (A \vect{x} - \vect{b})^T (A \vect{x} - \vect{b}) \\
+&= \vect{x}^T A^T A \vect{x} - \vect{x}^T A^T \vect{b} - \vect{b}^T A \vect{x} + \vect{b}^T \vect{b} \\
+&= \vect{x}^T A^T A \vect{x} - 2\vect{b}^T A \vect{x}  + \vect{b}^T \vect{b}
+\quad \quad \text{as } \vect{b}^T A \vect{x} = \vect{x}^T A^T \vect{b} \text{ is scalar}
+\end{align*}
+As $\vect{b}^T \vect{b}$ is a constant, this term can be dropped. As $A$ is symmetric and positive definite, we can write
+\begin{align*}
+2A^T A \vect{x} - 2\vect{b}^T A \vect{x}
+\end{align*}
+Setting this equal to 0 and transposing, we find $A^T A = A^T \vect{b}$.
+
+
+\textbf{Exercises 9.5 - 9.9}
+
+See Jupyter notebook.
+
+\textbf{Exercise 9.10}
+\begin{align*}
+f'(\vect{x}) &= \vect{x}^T Q - \vect{b}^T \\
+f''(\vect{x}) &= Q^T
+\end{align*}
+Setting $f'(\vect{x}) = \vect{0}$, we find $\vect{x}^* = Q^{-1} \vect{b}$.
+
+Using Newton's method, given $\vect{x}_0$
+\begin{align*}
+\vect{x}_1 &= \vect{x}_0 - (Q^T)^{-1} (\vect{x}_0^T Q - \vect{b}^T)^T \\
+&= \vect{x}_0 - Q^{-1} Q  \vect{x}_0 - Q^{-1}\vect{b} \quad \quad \text{as } Q^T = Q \\
+&= Q^{-1} \vect{b}
+\end{align*}
+
+\textbf{Exercise 9.12}
+
+Given an eigenvector $\vect{x}_i$ of A, where $A \vect{x}_i = \lambda_i \vect{x}$, we have
+\begin{align*}
+B \vect{x}_i &= (A + \mu I) \vect{x}_i \\
+&= A\vect{x}_i + \mu \vect{x}_i \\
+&= \lambda_i \vect{x}_i + \mu \vect{x}_i \\
+&= (\lambda_i + \mu) \vect{x}_i
+\end{align*}
+Therefore $A$ and $B$ have the same eigenvectors, and $B$ has eigenvalues of the form $\lambda_i + \mu$.
+
+\end{document}
